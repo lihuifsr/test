@@ -1,0 +1,221 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.h.mall</groupId>
+  <artifactId>my.parent</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0.0-SNAPSHOT</version>
+  
+  <name>my-parent</name>
+  <url>my.com</url>
+  
+  <modules>
+    <module>../my.demo</module>
+<!--     <module>?</module> -->
+  </modules>
+  
+  <properties>
+  	<spring.version>3.2.4.RELEASE</spring.version>
+  	<spring.security.version>3.1.4.RELEASE</spring.security.version>
+  </properties>
+  
+  <dependencyManagement>
+  
+  	<dependencies>
+	  <dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.11</version>
+	    <scope>test</scope>
+	  </dependency>
+	  
+	  <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring.version}</version>
+	  </dependency>
+	  <dependency>  
+		<groupId>org.springframework</groupId>  
+		<artifactId>spring-expression</artifactId>  
+		<version>${spring.version}</version>  
+	  </dependency>
+	  <dependency>  
+		<groupId>org.springframework</groupId>  
+		<artifactId>spring-beans</artifactId>  
+		<version>${spring.version}</version>  
+	  </dependency>
+	  <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${spring.version}</version>
+	  </dependency>
+	  <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring.version}</version>
+	  </dependency>
+	  <dependency>  
+		<groupId>org.springframework</groupId>  
+		<artifactId>spring-webmvc-portlet</artifactId>  
+		<version>${spring.version}</version>  
+	  </dependency>  
+	  <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${spring.version}</version>
+	  </dependency>
+	  <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>${spring.version}</version>
+	  </dependency>
+	  
+	  <dependency>
+		<groupId>org.freemarker</groupId>
+		<artifactId>freemarker</artifactId>
+		<version>2.3.20</version>
+	  </dependency>
+	  
+	  <!-- Spring Security -->
+	  <dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-core</artifactId>
+		<version>${spring.security.version}</version>
+	  </dependency>
+	  <dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-web</artifactId>
+		<version>${spring.security.version}</version>
+	  </dependency>
+	  <dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-config</artifactId>
+		<version>${spring.security.version}</version>
+	  </dependency>
+	  
+	  <!-- 	spring mvc @responseBody 注解 406错误需要的包 -->
+	  <dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-jaxrs</artifactId>
+		<version>1.9.13</version>
+	  </dependency>
+	  
+	  <dependency>
+		<groupId>org.apache.httpcomponents</groupId>
+		<artifactId>httpclient</artifactId>
+		<version>4.3.1</version>
+	  </dependency>
+	  
+	  <dependency>
+		<groupId>org.apache.httpcomponents</groupId>
+		<artifactId>httpclient-cache</artifactId>
+		<version>4.3.1</version>         
+	  </dependency>
+	  
+	  <dependency>
+		<groupId>org.apache.httpcomponents</groupId>
+		<artifactId>httpmime</artifactId>
+		<version>4.3.1</version>         
+	  </dependency>
+	  
+	  <dependency>
+		<groupId>org.apache.httpcomponents</groupId>
+		<artifactId>httpcore</artifactId>
+		<version>4.3.1</version>
+	  </dependency>
+	  
+	  
+	  <dependency>
+		<groupId>org.swinglabs</groupId>
+		<artifactId>swingx</artifactId>
+		<version>1.6.1</version>
+	  </dependency>
+	  
+	  <dependency>
+		<groupId>com.sun.media</groupId>
+		<artifactId>jai-imageio</artifactId>
+		<version>1.1</version>
+      </dependency>
+      
+	  <dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>2.4</version>
+		<scope>provided</scope>
+	  </dependency>
+	  
+	  <dependency>
+		<groupId>commons-lang</groupId>
+		<artifactId>commons-lang</artifactId>
+		<version>2.5</version>
+	  </dependency>
+            
+	  <dependency>
+		<groupId>net.java.dev.jna</groupId>
+		<artifactId>jna</artifactId>
+		<version>4.0.0</version>
+	  </dependency>
+	
+	<dependency>
+	  <groupId>commons-collections</groupId>
+	  <artifactId>commons-collections</artifactId>
+	  <version>3.2.1</version>
+	</dependency>
+	
+	<dependency>    
+	    <groupId>net.sf.json-lib</groupId>   
+	    <artifactId>json-lib</artifactId>    
+	    <version>2.4</version>    
+	    <classifier>jdk15</classifier>  
+	</dependency>
+            
+  	</dependencies>
+  	
+  </dependencyManagement>
+  
+  <build>
+	<resources>
+	  <resource>
+		<filtering>true</filtering>
+		<directory>src/main/resources</directory>
+	  </resource>
+	  <resource>
+		<filtering>true</filtering>
+		<directory>src/main/conf/${env}</directory>
+	  </resource>
+	</resources>
+	
+	<pluginManagement>
+	  <plugins>
+		<plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-compiler-plugin</artifactId>
+		  <version>3.1</version>
+		  <configuration>
+			<source>1.6</source>
+			<target>1.6</target>
+			<encoding>UTF8</encoding> 
+		  </configuration>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>2.6</version>
+			<configuration>
+				<encoding>UTF-8</encoding>
+			</configuration>
+		</plugin>
+		<!-- 生产站点 -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-site-plugin</artifactId>
+			<version>3.3</version>
+		</plugin>
+	  </plugins>
+	</pluginManagement> 
+    <finalName>my_parent</finalName>
+  </build>
+  
+</project>
